@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Subfinder Notes (Basic to Pro Level)</title>
+  <style>
+    body {
+      font-family: "Siyam Rupali", sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #004085;
+    }
+    code {
+      background-color: #e2e3e5;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .command {
+      background-color: #f1f3f5;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-left: 5px solid #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Subfinder টুল এর সহজ নোটস (Basic থেকে Pro Level)</h1>
+
+  <p><strong>Subfinder</strong> হল একটি ওপেন সোর্স টুল, যেটা সাবডোমেইন খুঁজে বের করার জন্য ব্যবহার হয়। এটি বিভিন্ন ওপেন সোর্স প্ল্যাটফর্ম থেকে সাবডোমেইন কালেক্ট করে। নিচে এর কমান্ডগুলোর ব্যাখ্যা দেওয়া হলো:</p>
+
+  <div class="command">
+    <h2>1. <code>subfinder -d example.com</code></h2>
+    <p>এই কমান্ডটি <strong>example.com</strong> এর জন্য সব সাবডোমেইন খুঁজে বের করে।</p>
+    <p><strong>বোঝার জন্য:</strong> তুমি যদি জানতে চাও কোন কোন সাব-ডোমেইন আছে <code>example.com</code> ডোমেইনের, তবে এটা ব্যবহার করো।</p>
+  </div>
+
+  <div class="command">
+    <h2>2. <code>subfinder -d example.com -o result.txt</code></h2>
+    <p>এই কমান্ডটি খুঁজে পাওয়া সব সাবডোমেইন <strong>result.txt</strong> নামে একটি ফাইলে সংরক্ষণ করে।</p>
+    <p><strong>বোঝার জন্য:</strong> যেগুলো খুঁজে পাবে, সেগুলো টেক্সট ফাইলে লিখে রাখবে যেন পরেও দেখে নিতে পারো।</p>
+  </div>
+
+  <div class="command">
+    <h2>3. <code>subfinder -dL domains.txt -all -threads 50 -o output.txt</code></h2>
+    <p>একাধিক ডোমেইনের জন্য একসাথে সাবডোমেইন বের করা হয় এবং থ্রেড ৫০ করে স্পিড বাড়ানো হয়।</p>
+    <p><strong>বোঝার জন্য:</strong> অনেক ডোমেইনের সাবডোমেইন ফাস্ট এক্সট্র্যাক্ট করতে চাইলে এইটা ব্যবহার করো।</p>
+  </div>
+
+  <div class="command">
+    <h2>4. <code>subfinder -d example.com -silent -nW -o results.txt</code></h2>
+    <p><strong>-silent</strong> অতিরিক্ত আউটপুট বাদ দেয়, <strong>-nW</strong> নাম রিসল্যুশন বাদ দেয় (no DNS resolution)।</p>
+    <p><strong>বোঝার জন্য:</strong> শুধু সাবডোমেইন লিস্ট দরকার হলে এবং রিসল্যুশন না করেই কাজ চলবে — তখন এইটা ইউজফুল।</p>
+  </div>
+
+  <div class="command">
+    <h2>5. <code>subfinder -d example.com -all</code></h2>
+    <p>এই কমান্ডটি সব উৎস (sources) ব্যবহার করে যত বেশি সম্ভব সাবডোমেইন খুঁজে বের করার চেষ্টা করে।</p>
+    <p><strong>বোঝার জন্য:</strong> সবচেয়ে বেশি রেজাল্ট পেতে চাইলে এটা ব্যবহার করো।</p>
+  </div>
+
+  <div class="command">
+    <h2>6. <code>subfinder -h</code></h2>
+    <p>এই কমান্ডটি সাহায্যের জন্য, যেখানে সব অপশন ব্যাখ্যা করা থাকে।</p>
+    <p><strong>বোঝার জন্য:</strong> কোন অপশন কীভাবে কাজ করে জানতে হলে এটা চালাও।</p>
+  </div>
+
+  <div class="command">
+    <h2>7. <code>subfinder -d example.com -oJ output.json -oT output.txt </code></h2>
+    <p>এই কমান্ডটি রেজাল্ট JSON ও TXT দুই ফরম্যাটেই সংরক্ষণ করে।</p>
+    <p><strong>বোঝার জন্য:</strong> ভিন্ন ভিন্ন টুলে ইমপোর্ট করার সুবিধার জন্য একই সাথে দুই ফরম্যাটে রেজাল্ট চাইলে এটা ব্যবহার করো।</p>
+  </div>
+  <div class="command">
+    <h2> <code>subfinder -d example.com -oJ result.json -timeout 10</code></h2>
+    <p>এই কমান্ডে JSON ফরম্যাটে রেজাল্ট সেভ হয় এবং ১০ সেকেন্ড টাইমআউট দিয়ে দ্রুত রেসপন্স নেয়া হয়।</p>
+    <p><strong>বোঝার জন্য:</strong> অ্যাপ্লিকেশন বা API তে রেজাল্ট ব্যবহার করার জন্য JSON দরকার হলে ও টাইম নিয়ন্ত্রণ করতে চাইলে এটা ইউজ করো।</p>
+  </div>
+
+  <!-- Pro Level Commands -->
+
+  <div class="command">
+    <h2>8. <code>subfinder -d example.com -nW -o result.txt</code></h2>
+    <p>এই কমান্ডটি সাবডোমেইন খোঁজার সময় ওয়ার্ডলিস্ট ব্যবহার করে না।</p>
+    <p><strong>বোঝার জন্য:</strong> তুমি যদি কাস্টম বা ডিফল্ট ওয়ার্ডলিস্ট বাদ দিয়ে স্ক্যান করতে চাও, এটা ব্যবহার করো।</p>
+  </div>
+
+  <div class="command">
+    <h2>9. <code>subfinder -d example.com -o result.txt -timeout 20</code></h2>
+    <p>এই কমান্ডটি প্রতিটি অনুরোধের জন্য টাইমআউট সেট করে (এখানে ২০ সেকেন্ড)।</p>
+    <p><strong>বোঝার জন্য:</strong> যদি স্লো কানেকশন বা API রেট লিমিট নিয়ে সমস্যা হয়, এই কমান্ড দিয়ে টাইম বাড়িয়ে নিতে পারো।</p>
+  </div>
+
+  <div class="command">
+    <h2>10. <code>subfinder -d example.com -max-time 10</code></h2>
+    <p>এই কমান্ডে পুরো স্ক্যান প্রসেসের জন্য সময় সীমা নির্ধারণ করা হয় (এখানে ১০ সেকেন্ড)।</p>
+    <p><strong>বোঝার জন্য:</strong> স্ক্যান যেন বেশি সময় না নেয় — সেটার জন্য টাইম লিমিট দেয়া হয়।</p>
+  </div>
+
+  <div class="command">
+    <h2>11. <code>subfinder -d example.com -r 1.1.1.1,8.8.8.8 -o result.txt</code></h2>
+    <p>এই কমান্ডটি নির্দিষ্ট DNS রেজলভার (যেমন Cloudflare ও Google DNS) ব্যবহার করে সাবডোমেইন খুঁজে বের করে।</p>
+    <p><strong>বোঝার জন্য:</strong> নিরাপদ ও দ্রুত রেজল্ট পেতে নিজের পছন্দমতো রেজলভার ব্যবহার করতে পারো।</p>
+  </div>
+
+  <div class="command">
+    <h2>12. <code>subfinder -d example.com -config config.yaml</code></h2>
+    <p>এই কমান্ডে কাস্টম কনফিগারেশন ফাইল ব্যবহার করা হয়।</p>
+    <p><strong>বোঝার জন্য:</strong> একাধিক অপশন আগে থেকেই সেট করে রাখতে চাইলে কনফিগ ফাইল দিয়ে রান করো।</p>
+  </div>
+
+  <div class="command">
+    <h2>13. <code>subfinder -d example.com -t 50</code></h2>
+    <p>এই কমান্ডটি একসাথে ৫০টি থ্রেড চালিয়ে সাবডোমেইন খোঁজার কাজ করে দ্রুত রেজাল্ট দেয়।</p>
+    <p><strong>বোঝার জন্য:</strong> অনেক দ্রুত রেজাল্ট পেতে চাইলে থ্রেড বাড়িয়ে নিতে পারো। কিন্তু খেয়াল রাখো যেন সার্ভারে অতিরিক্ত লোড না পড়ে।</p>
+  </div>
+  <div class="command">
+    <h2>14. <code>subfinder -d example.com -o result.txt -active</code></h2>
+    <p>এই কমান্ডটি একটিভ সাবডোমেইন শনাক্ত করে এবং রেজাল্ট <code>result.txt</code> ফাইলে সংরক্ষণ করে।</p>
+    <p><strong>বোঝার জন্য:</strong> শুধু যেগুলো সচল আছে এমন সাবডোমেইন দরকার হলে এটা দারুণ উপযোগী।</p>
+  </div>
+  <div class="command">
+    <h2>15. <code>subfinder -d example.com -v -all -o result.txt</code></h2>
+    <p>এই কমান্ডটি বিস্তারিত (verbose) আউটপুটসহ সব সোর্স থেকে সাবডোমেইন বের করে এবং <code>result.txt</code> ফাইলে সেভ করে।</p>
+    <p><strong>বোঝার জন্য:</strong> পুরা প্রসেস দেখতে চাইলে এবং সব রেজাল্ট একসাথে দরকার হলে এটা চালাও।</p>
+  </div>
+
+  <div class="command">
+    <h2>16. <code>subfinder -d example.com -all -timeout 30 -retries 3</code></h2>
+    <p>এই কমান্ডটি সব সোর্স ব্যবহার করে সাবডোমেইন খোঁজে, টাইমআউট ৩০ সেকেন্ড এবং ৩ বার পুনরায় চেষ্টা করে।</p>
+    <p><strong>বোঝার জন্য:</strong> বেশি ডেটা পেতে এবং নেটওয়ার্ক স্লো থাকলে টাইমআউট বাড়িয়ে সব রেজাল্ট আনার চেষ্টা করে।</p>
+  </div>
+  <div class="command">
+    <h2>17. <code>subfinder -d example.com -nW -nC</code></h2>
+    <p>এই কমান্ডটি ওয়ার্ডলিস্ট এবং কনফিগারেশন ফাইল ব্যবহার না করে সাবডোমেইন খুঁজে বের করে।</p>
+    <p><strong>বোঝার জন্য:</strong> ডিফল্ট ওয়ার্ডলিস্ট বা কনফিগ বাদ দিয়ে রান করতে চাইলে এটা ব্যবহার করো।</p>
+  </div>
+</html>
